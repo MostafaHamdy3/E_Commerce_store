@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "store_payIn",
-    "slug": "store_payIn",
+    "slug": "e-commerce",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/logo.png",
@@ -47,6 +47,12 @@
     },
     "web": {
       "favicon": "./src/assets/logo.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2bfdb8ad-ff02-449b-abb9-a2cb7ce4ee72"
+      }
+    },
+    "owner": "mostafa7amdy"
   }
 }
