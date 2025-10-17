@@ -3,7 +3,6 @@ import { useFonts } from 'expo-font';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated';
 import { Provider as ReduxProvider } from 'react-redux';
-import { QueryClient } from '@tanstack/react-query';
 import { KeyboardProvider } from "react-native-keyboard-controller";
 
 import './global.css';
@@ -14,15 +13,6 @@ import AppNavigator from './src/navigation/AppNavigator';
 configureReanimatedLogger({
   level: ReanimatedLogLevel.warn,
   strict: false,
-});
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      staleTime: 5 * 60 * 1000,
-    },
-  },
 });
 
 export default function App() {
