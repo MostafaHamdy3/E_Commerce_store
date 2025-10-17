@@ -12,17 +12,38 @@ const ThemeProvider = ({children}: ThemeProps) => {
 
   const [theme, setTheme] = useState<ThemeMode>(deviceTheme);
   const [isThemeLoaded, setIsThemeLoaded] = useState(false);
+  const [followSystemTheme, setFollowSystemTheme] = useState(true);
 
   const setThemeHandler = useCallback(async () => {
     const storage = new MMKV();
     const storedTheme = storage.getString('theme');
-    setTheme((storedTheme as ThemeMode) || deviceTheme);
+    const storedFollowSystem = storage.getBoolean('followSystemTheme') ?? true;
+    
+    setFollowSystemTheme(storedFollowSystem);
+    
+    if (storedFollowSystem) {
+      setTheme(deviceTheme);
+    } else {
+      setTheme((storedTheme as ThemeMode) || deviceTheme);
+    }
     setIsThemeLoaded(true);
   }, [deviceTheme]);
 
   useEffect(() => {
     setThemeHandler();
   }, [setThemeHandler]);
+
+  // Listen for system appearance changes
+  useEffect(() => {
+    if (!followSystemTheme) return;
+
+    const subscription = Appearance.addChangeListener(({colorScheme}) => {
+      const newTheme = colorScheme === 'light' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+
+    return () => subscription?.remove();
+  }, [followSystemTheme]);
 
   const contextValue = useMemo(() => ({theme}), [theme]);
 
@@ -34,8 +55,19 @@ const ThemeProvider = ({children}: ThemeProps) => {
 
   const themeSwitchHandler = useCallback(async (newTheme: ThemeMode) => {
     setTheme(newTheme);
+    setFollowSystemTheme(false);
     const storage = new MMKV();
     storage.set('theme', newTheme);
+    storage.set('followSystemTheme', false);
+  }, []);
+
+  const enableSystemTheme = useCallback(async () => {
+    const currentDeviceTheme = Appearance.getColorScheme() === 'light' ? 'light' : 'dark';
+    setTheme(currentDeviceTheme);
+    setFollowSystemTheme(true);
+    const storage = new MMKV();
+    storage.set('followSystemTheme', true);
+    storage.delete('theme');
   }, []);
 
   return isThemeLoaded ? (
@@ -45,6 +77,8 @@ const ThemeProvider = ({children}: ThemeProps) => {
           theme: contextValue.theme,
           getThemeColor: getThemeColorHandler,
           switchTheme: themeSwitchHandler,
+          enableSystemTheme,
+          followSystemTheme,
         }}>
         {children}
       </ThemeContext.Provider>

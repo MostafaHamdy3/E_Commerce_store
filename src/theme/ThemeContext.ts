@@ -18,10 +18,16 @@ type ThemeContextProps = {
   theme: ThemeMode;
   switchTheme: (newTheme: ThemeMode) => void;
   getThemeColor: (colorKey: ThemesVariables) => string;
+  enableSystemTheme: () => void;
+  followSystemTheme: boolean;
 };
 
 export const ThemeContext = createContext<ThemeContextProps>({
   theme: Appearance.getColorScheme() === 'light' ? 'light' : 'dark',
-} as ThemeContextProps);
+  switchTheme: () => {},
+  getThemeColor: () => '',
+  enableSystemTheme: () => {},
+  followSystemTheme: true,
+});
 
 export const useTheme = () => useContext(ThemeContext);
