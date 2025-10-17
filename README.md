@@ -14,16 +14,6 @@ It uses DummyJSON as the backend API for authentication and product data.
 - **Offline Support**: Persists React Query cache using MMKV for offline visibility on relaunch
 - **Theme**: Light/dark theme depend on device theme
 
-### Tech Stack
-
-- React Native
-- TypeScript
-- React Navigation
-- React Query
-- MMKV
-- Redux Toolkit
-- NativeWind (Tailwind CSS for RN)
-
 ## Super-admin User Chosen
 
 - **Username**: `noahh`
@@ -66,6 +56,26 @@ It uses DummyJSON as the backend API for authentication and product data.
    npm run ios
    ```
 
+## 📱 Screenshots
+
+<div align="center">
+
+### App Interface - White
+<img src="src/assets/screenshots/login_white.jpg" width="250" alt="Login white Screen"/>
+<img src="src/assets/screenshots/allProducts_white.jpg" width="250" alt="All Product white Screen"/>
+<img src="src/assets/screenshots/laptop_white.jpg" width="250" alt="Laptop white Screen"/>
+
+</div>
+
+<div align="center">
+
+### App Interface - Dark
+<img src="src/assets/screenshots/login_dark.jpg" width="250" alt="Login dark Screen"/>
+<img src="src/assets/screenshots/allProducts_dark.jpg" width="250" alt="All Product dark Screen"/>
+<img src="src/assets/screenshots/laptop_dark.jpg" width="250" alt="Laptop dark Screen"/>
+
+</div>
+
 ## Trade-offs and Future Improvements
 
 ### If I Had More Time
@@ -81,9 +91,25 @@ It uses DummyJSON as the backend API for authentication and product data.
   - Add detailed product page to show all product detail.
 
 - **Shopping Cart & Checkout**
-  - Implement shopping cart with persistent storage
+  - Implement shopping cart with persistent storage.
+  - Using FlashList instead of FlatList.
 
+## Tech Stack 🛠️
 
+<div align="center">
+
+| Category          | Technologies                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| **Frontend**      | ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) |
+| **Backend**       | ![DummyJSON](https://img.shields.io/badge/DummyJSON-FF6B6B?style=for-the-badge&logo=json&logoColor=white) |
+| **Navigation**    | ![React Navigation](https://img.shields.io/badge/React_Navigation-6F52FF?style=for-the-badge) |
+| **Data Fetching** | ![React Query](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white) |
+| **Storage**       | ![MMKV](https://img.shields.io/badge/MMKV-4CAF50?style=for-the-badge) |
+| **State Management** | ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white) |
+| **Validation**    | ![Yup](https://img.shields.io/badge/Yup-FFA500?style=for-the-badge) |
+| **Styling**       | ![NativeWind](https://img.shields.io/badge/NativeWind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) |
+
+</div>
 
 ## Author 👨‍💻
 

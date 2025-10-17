@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 
 import { useLaptopsQuery } from "../hooks/useCateogryProductsQuery";
 import ProductCard from "../components/ProductCard";
-import { loadingProducts, productContainer } from "./Products";
+import { indicatorContainer, productContainer } from "./Products";
 import NoInternetConnection from "../components/NoInternetConnection";
 import { resetInactivity } from "../store/authSlice";
 import { saveQueryCache } from "../utils/queryPersistence";
@@ -63,11 +63,12 @@ const LaptopCategory = () => {
 
   if (isLoading) {
     return (
-      <ActivityIndicator
-        size="large"
-        color={getThemeColor('primaryColor')}
-        className={loadingProducts}
-      />
+      <View className={indicatorContainer}>
+        <ActivityIndicator
+          size="large"
+          color={getThemeColor('primaryColor')}
+        />
+      </View>
     );
   }
 

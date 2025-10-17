@@ -79,6 +79,7 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
+      initialRouteName="Products"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => getBottomTabIcon(route.name, focused),
         tabBarActiveTintColor: getThemeColor('primaryColor'),
@@ -92,18 +93,37 @@ function BottomTabNavigator() {
         focus: handleTabFocus,
       }}
     >
-      <BottomTab.Screen name="Products" component={Products} />
-      <BottomTab.Screen name="Laptop" component={LaptopCategory} />
-      <BottomTab.Screen
-        name="Logout"
-        component={Logout} // Dummy component, won't be used
-        listeners={{
-          tabPress: (e) => {
-            e.preventDefault();
-            handleLogout();
-          },
-        }}
-      />
+      {I18nManager.isRTL ? (
+        <>
+          <BottomTab.Screen
+            name="Logout"
+            component={Logout} // Dummy component, won't be used
+            listeners={{
+              tabPress: (e) => {
+                e.preventDefault();
+                handleLogout();
+              },
+            }}
+          />
+          <BottomTab.Screen name="Laptop" component={LaptopCategory} />
+          <BottomTab.Screen name="Products" component={Products} />
+        </>
+      ) : (
+        <>
+          <BottomTab.Screen name="Products" component={Products} />
+          <BottomTab.Screen name="Laptop" component={LaptopCategory} />
+          <BottomTab.Screen
+            name="Logout"
+            component={Logout} // Dummy component, won't be used
+            listeners={{
+              tabPress: (e) => {
+                e.preventDefault();
+                handleLogout();
+              },
+            }}
+          />
+        </>
+      )}
     </BottomTab.Navigator>
   );
 }

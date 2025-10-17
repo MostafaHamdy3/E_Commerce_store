@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { I18nManager, Image, StyleSheet, Text, View } from "react-native";
 
 import { useDispatch } from "react-redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
@@ -128,8 +128,8 @@ const logoStyle = "w-48 h-48 mb-[-24px]";
 const welcome = `text-mainColor font-enMd`;
 const authTitle = `w-full text-center text-descColor font-enMd`;
 const authContent = "w-[92%] mt-12";
-const errorMessage = `text-error mt-1 mx-2 font-enRg`;
-const generalError = `text-error mb-1 mx-2 font-enMd`;
+const errorMessage = `text-error mt-1 mx-2 font-enRg ${I18nManager.isRTL ? 'text-right' : 'text-left'}`;
+const generalError = `text-error mb-1 mx-2 font-enMd ${I18nManager.isRTL ? 'text-right' : 'text-left'}`;
 
 const styles = StyleSheet.create({
   welcomeText: { fontSize: scaleFont(27) },

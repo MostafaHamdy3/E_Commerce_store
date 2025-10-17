@@ -67,11 +67,12 @@ const Products = () => {
 
   if (productsLoading) {
     return (
-      <ActivityIndicator
-        size="large"
-        color={getThemeColor('primaryColor')}
-        className={loadingProducts}
-      />
+      <View className={indicatorContainer}>
+        <ActivityIndicator
+          size="large"
+          color={getThemeColor('primaryColor')}
+        />
+      </View>
     );
   }
 
@@ -118,6 +119,6 @@ const Products = () => {
 };
 
 export const productContainer = "flex-1 bg-bgScreen p-4";
-export const loadingProducts = "flex-1 justify-center items-center";
+export const indicatorContainer = "flex-1 justify-center items-center bg-bgScreen";
 
 export default Products;

@@ -57,9 +57,9 @@ const LockModal = ({ isVisible, unlockHandler }: LockModalProps) => {
   );
 };
 
-const container = "flex-1 bg-bgScreen items-center justify-center pb-36";
-const content = "bg-bgContainer p-6 rounded-lg items-center shadow-lg";
-const mainText = "text-mainColor font-enBold text-lg mb-4";
+const container = "flex-1 items-center justify-center bg-bgScreen pb-16";
+const content = " w-[92%] self-center bg-bgContainer p-6 rounded-lg shadow-lg";
+const mainText = "text-center text-mainColor font-enBold text-lg mb-4";
 const passcodeText = "text-center text-secondaryColor mb-4";
 
 export default LockModal;
