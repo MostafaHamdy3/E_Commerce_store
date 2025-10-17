@@ -36,8 +36,6 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 2. **Install Dependencies:**
    ```bash
-   yarn install
-   # or
    npm install
    ```
 
