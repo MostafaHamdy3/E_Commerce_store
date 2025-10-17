@@ -31,7 +31,7 @@ It uses DummyJSON as the backend API for authentication and product data.
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/MostafaHamdy3/E_Commerce_store
-   cd store_payIn
+   cd E_Commerce_store
    ```
 
 2. **Install Dependencies:**
@@ -41,16 +41,13 @@ It uses DummyJSON as the backend API for authentication and product data.
    npm install
    ```
 
-3. **iOS Setup (if targeting iOS):**
-   ```bash
-   cd ios && pod install && cd ..
-   ```
-
-4. **Environment Configuration:**
+3. **Environment Configuration:**
    - Ensure device supports biometrics (tested on iOS/Android emulators with fallback)
 
 ### Running the App
    ```bash
+   npx expo prebuild
+
    npm run android
    # or
    npm run ios

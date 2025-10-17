@@ -29,7 +29,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSFaceIDUsageDescription": "The Store_PayIn app uses Face ID for authentication."
-      }
+      },
+      "bundleIdentifier": "com.mostafa7amdy.store-payIn"
     },
     "android": {
       "adaptiveIcon": {
@@ -38,7 +39,11 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.mostafa7amdy.store_payIn"
+      "package": "com.mostafa7amdy.store_payIn",
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ]
     },
     "web": {
       "favicon": "./src/assets/logo.png"
