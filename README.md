@@ -73,6 +73,33 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 </div>
 
+## 📁 Project Structure
+
+```
+store_payIn/
+├── assets/                   # Static assets
+│   ├── bootsplash/           # Boot splash configurations
+│   └── screenshots/          # App screenshots for README
+├── src/
+│   ├── assets/                     # App assets
+│   ├── components/           # Reusable UI components
+│   ├── hooks/                   # Custom React hooks
+│   ├── navigation/              # Navigation configuration
+│   ├── provider/                # Context providers
+│   ├── screens/                 # Screen components
+│   ├── services/                # API services and configurations
+│   ├── store/                   # Redux store configuration
+│   ├── theme/                   # Theme configuration
+│   ├── types/                   # TypeScript type definitions
+│   └── utils/                   # Utility functions
+├── App.tsx                         # Main app component
+├── index.ts                        # Entry point
+├── package.json                 # Dependencies and scripts
+├── tailwind.config.js           # TailwindCSS configuration
+├── tsconfig.json                 # TypeScript configuration
+└── README.md                    # Project documentation
+```
+
 ## Trade-offs and Future Improvements
 
 ### If I Had More Time
@@ -90,6 +117,8 @@ It uses DummyJSON as the backend API for authentication and product data.
 - **Shopping Cart & Checkout**
   - Implement shopping cart with persistent storage.
   - Using FlashList instead of FlatList.
+
+
 
 ## Tech Stack 🛠️
 

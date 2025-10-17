@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { I18nManager, Text, View } from "react-native";
 
 import { useSelector } from "react-redux";
 
@@ -21,6 +21,6 @@ const NoInternetConnection = () => {
   );
 };
 
-const container = "bg-borderColor flex-row items-center justify-center gap-2 p-2";
+const container = `bg-borderColor ${I18nManager.isRTL ? "flex-row-reverse" : "flex-row"} items-center justify-center gap-2 p-2`;
 
 export default NoInternetConnection;
