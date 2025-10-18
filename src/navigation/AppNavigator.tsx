@@ -194,11 +194,12 @@ const AppNavigator = () => {
   }, []);
 
   const handleAppStateChange = useCallback(
-    (nextAppState: AppStateStatus) => {
+    async (nextAppState: AppStateStatus) => {
+      const token = await getAccessToken();
       if (
         nextAppState === "active" &&
         appState.current === "background" &&
-        isAuthenticated
+        token
       ) {
         setIsLock(true);
         dispatch(resetInactivity());
@@ -206,7 +207,7 @@ const AppNavigator = () => {
       }
       appState.current = nextAppState;
     },
-    [isAuthenticated, dispatch]
+    [dispatch]
   );
 
   const unlockHandler = useCallback(() => {
