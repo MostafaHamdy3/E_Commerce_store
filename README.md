@@ -28,7 +28,7 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 ### Installation
 
-You can download the APK from here [Download APK](https://drive.google.com/file/d/1VvjnOm8_Iuut9ugQ6CINAT7GxR3rroHP/view?usp=sharing)
+You can download the APK direct on Android from here [Download APK](https://drive.google.com/file/d/1VvjnOm8_Iuut9ugQ6CINAT7GxR3rroHP/view?usp=sharing)
 
 OR run the project locally following these steps
 
