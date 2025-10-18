@@ -28,6 +28,8 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 ### Installation
 
+You can download the APK from here [Download APK](https://drive.google.com/file/d/1VvjnOm8_Iuut9ugQ6CINAT7GxR3rroHP/view?usp=sharing)
+
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/MostafaHamdy3/E_Commerce_store
