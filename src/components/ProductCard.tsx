@@ -56,7 +56,7 @@ const ProductCard = ({ product, isAllTab }: productCardProps) => {
 const MemoizedProductCard = memo(ProductCard);
 
 const container = `w-[48%] bg-bgContainer rounded-lg p-4 mb-4 items-center ${Platform.OS === 'ios' ? 'shadow-sm' : 'shadow-md'}`;
-const trashContainer = `absolute bg-bgScreen p-1 rounded-full ${I18nManager.isRTL ? 'self-start' : 'self-end'} mt-2 mx-3`;
+const trashContainer = `absolute bg-bgScreen p-2 rounded-full ${I18nManager.isRTL ? 'self-start' : 'self-end'} mt-2 mx-3 z-10`;
 const productText = "text-center text-mainColor font-enMd text-md leading-5";
 
 MemoizedProductCard.displayName = 'ProductCard';
