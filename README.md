@@ -52,7 +52,7 @@ https://github.com/user-attachments/assets/0c0bc89d-31a3-4056-b065-b81d0b58a5c0
 
 ### Installation
 
-You can download the APK direct on Android from here [Download APK](https://drive.google.com/file/d/1oPkBU9bRYCKnLdlWHghUkBsCYzR6huFF/view?usp=sharing)
+You can download the APK direct on Android from here [Download APK](https://drive.google.com/file/d/1Mx0GTIrcACXdyeRkCVowM-ghPGtzAh_N/view?usp=sharing)
 
 OR run the project locally following these steps
 
