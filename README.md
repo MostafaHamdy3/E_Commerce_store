@@ -10,7 +10,7 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 - **Authentication**: Login via DummyJSON API with token storage and session validation
 - **Auto-lock**: Locks after 10 seconds of inactivity or when the app goes to the background. Unlocks via biometrics (with password fallback)
-- **Product Screens**: Displays all products and a filtered list for a specific category (Laptop)
+- **Product Screens**: Displays all products and a filtered list for a specific category `Laptop`
 - **Offline Support**: Persists React Query cache using MMKV for offline visibility on relaunch
 - **Theme**: Light/dark theme depend on device theme
 
@@ -41,7 +41,7 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 ## 📽️ Video preview
 
-
+https://github.com/user-attachments/assets/0c0bc89d-31a3-4056-b065-b81d0b58a5c0
 
 ## Setup Steps and How to Run
 
