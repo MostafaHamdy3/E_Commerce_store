@@ -19,6 +19,30 @@ It uses DummyJSON as the backend API for authentication and product data.
 - **Username**: `noahh`
 - **Password**: `noahhpass`
 
+## 📱 Screenshots
+
+<div align="center">
+
+### App Interface - White
+<img src="src/assets/screenshots/login_white.jpg" width="250" alt="Login white Screen"/>
+<img src="src/assets/screenshots/allProducts_white.jpg" width="250" alt="All Product white Screen"/>
+<img src="src/assets/screenshots/laptop_white.jpg" width="250" alt="Laptop white Screen"/>
+
+</div>
+
+<div align="center">
+
+### App Interface - Dark
+<img src="src/assets/screenshots/login_dark.jpg" width="250" alt="Login dark Screen"/>
+<img src="src/assets/screenshots/allProducts_dark.jpg" width="250" alt="All Product dark Screen"/>
+<img src="src/assets/screenshots/laptop_dark.jpg" width="250" alt="Laptop dark Screen"/>
+
+</div>
+
+## 📽️ Video preview
+
+
+
 ## Setup Steps and How to Run
 
 ### Prerequisites
@@ -54,26 +78,6 @@ OR run the project locally following these steps
    # or
    npm run ios
    ```
-
-## 📱 Screenshots
-
-<div align="center">
-
-### App Interface - White
-<img src="src/assets/screenshots/login_white.jpg" width="250" alt="Login white Screen"/>
-<img src="src/assets/screenshots/allProducts_white.jpg" width="250" alt="All Product white Screen"/>
-<img src="src/assets/screenshots/laptop_white.jpg" width="250" alt="Laptop white Screen"/>
-
-</div>
-
-<div align="center">
-
-### App Interface - Dark
-<img src="src/assets/screenshots/login_dark.jpg" width="250" alt="Login dark Screen"/>
-<img src="src/assets/screenshots/allProducts_dark.jpg" width="250" alt="All Product dark Screen"/>
-<img src="src/assets/screenshots/laptop_dark.jpg" width="250" alt="Laptop dark Screen"/>
-
-</div>
 
 ## 📁 Project Structure
 
