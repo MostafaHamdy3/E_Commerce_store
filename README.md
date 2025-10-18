@@ -41,7 +41,7 @@ It uses DummyJSON as the backend API for authentication and product data.
 
 ## 📽️ Video preview
 
-
+https://github.com/user-attachments/assets/0c0bc89d-31a3-4056-b065-b81d0b58a5c0
 
 ## Setup Steps and How to Run
 
