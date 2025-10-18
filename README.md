@@ -38,8 +38,6 @@ You can download the APK from here [Download APK](https://drive.google.com/file/
 
 2. **Install Dependencies:**
    ```bash
-   yarn install
-   # or
    npm install
    ```
 
