@@ -9,11 +9,25 @@ import './global.css';
 import { ProviderTheme } from './src/theme/Provider';
 import { store } from './src/store/store';
 import AppNavigator from './src/navigation/AppNavigator';
+import { useTheme } from './src/theme/ThemeContext';
 
 configureReanimatedLogger({
   level: ReanimatedLogLevel.warn,
   strict: false,
 });
+
+function AppContent() {
+  const { theme } = useTheme();
+
+  return (
+    <>
+      <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
+      <SafeAreaView className='flex-1 bg-bgScreen'>
+        <AppNavigator />
+      </SafeAreaView>
+    </>
+  );
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,10 +42,7 @@ export default function App() {
     <KeyboardProvider>
       <ReduxProvider store={store}>
         <ProviderTheme>
-          <StatusBar style="auto" />
-          <SafeAreaView className='flex-1 bg-bgScreen'>
-            <AppNavigator />
-          </SafeAreaView>
+          <AppContent />
         </ProviderTheme>
       </ReduxProvider>
     </KeyboardProvider>
