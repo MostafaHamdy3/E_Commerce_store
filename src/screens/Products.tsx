@@ -67,7 +67,7 @@ const Products = () => {
 
   if (productsLoading) {
     return (
-      <View className={indicatorContainer}>
+      <View className={"flex-1 justify-center items-center bg-bgScreen"}>
         <ActivityIndicator
           size="large"
           color={getThemeColor('primaryColor')}
@@ -79,7 +79,7 @@ const Products = () => {
   return (
     <>
       <NoInternetConnection />
-      <View className={productContainer}>
+      <View className={"flex-1 bg-bgScreen p-4"}>
         <FlatList
           data={allProducts}
           keyExtractor={keyExtractor}
@@ -117,8 +117,5 @@ const Products = () => {
     </>
   );
 };
-
-export const productContainer = "flex-1 bg-bgScreen p-4";
-export const indicatorContainer = "flex-1 justify-center items-center bg-bgScreen";
 
 export default Products;

@@ -10,7 +10,6 @@ import { useDispatch } from "react-redux";
 
 import { useLaptopsQuery } from "../hooks/useCateogryProductsQuery";
 import ProductCard from "../components/ProductCard";
-import { indicatorContainer, productContainer } from "./Products";
 import NoInternetConnection from "../components/NoInternetConnection";
 import { resetInactivity } from "../store/authSlice";
 import { saveQueryCache } from "../utils/queryPersistence";
@@ -63,7 +62,7 @@ const LaptopCategory = () => {
 
   if (isLoading) {
     return (
-      <View className={indicatorContainer}>
+      <View className={"flex-1 justify-center items-center bg-bgScreen"}>
         <ActivityIndicator
           size="large"
           color={getThemeColor('primaryColor')}
@@ -75,7 +74,7 @@ const LaptopCategory = () => {
   return (
     <>
       <NoInternetConnection />
-      <View className={productContainer}>
+      <View className={"flex-1 bg-bgScreen p-4"}>
         <FlatList
           data={allProducts}
           keyExtractor={keyExtractor}

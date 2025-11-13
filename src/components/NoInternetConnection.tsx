@@ -12,7 +12,7 @@ const NoInternetConnection = () => {
   return (
     <>
       {!isConnected && (
-        <View className={container}>
+        <View className={`bg-borderColor ${I18nManager.isRTL ? "flex-row-reverse" : "flex-row"} items-center justify-center gap-2 p-2`}>
           <NoWifi width={24} height={24} />
           <Text>Offline Mode: Data may be outdated.</Text>
         </View>
@@ -20,7 +20,5 @@ const NoInternetConnection = () => {
     </>
   );
 };
-
-const container = `bg-borderColor ${I18nManager.isRTL ? "flex-row-reverse" : "flex-row"} items-center justify-center gap-2 p-2`;
 
 export default NoInternetConnection;

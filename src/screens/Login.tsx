@@ -68,15 +68,15 @@ const Login = () => {
       contentContainerStyle={{ flexGrow: 1 }}
       keyboardShouldPersistTaps="handled"
     >
-      <View className={container}>
-        <Image source={require("../assets/logo.png")} className={logoStyle} />
-        <Text className={welcome} style={styles.welcomeText}>
+      <View className={"flex-1 bg-bgScreen items-center justify-center pb-36"}>
+        <Image source={require("../assets/logo.png")} className={"w-48 h-48 mb-[-24px]"} />
+        <Text className={'text-mainColor font-enMd'} style={styles.welcomeText}>
           {"Welcome Back!"}
         </Text>
-        <Text className={authTitle} style={styles.continueText}>
+        <Text className={'w-full text-center text-descColor font-enMd'} style={styles.continueText}>
           {"Sign in to your account"}
         </Text>
-        <View className={authContent}>
+        <View className={"w-[92%] mt-12"}>
           <Formik
             initialValues={initialValues}
             validationSchema={loginSchema}
@@ -91,7 +91,10 @@ const Login = () => {
                   onChangeText={formikProps.handleChange("username")}
                   onBlur={formikProps.handleBlur("username")}
                 />
-                <Text className={errorMessage} style={styles.errorText}>
+                <Text
+                  className={`text-error mt-1 mx-2 font-enRg ${I18nManager.isRTL ? 'text-right' : 'text-left'}`}
+                  style={styles.errorText}
+                >
                   {formikProps.touched.username && formikProps.errors.username}
                 </Text>
                 <InputIcon
@@ -102,10 +105,16 @@ const Login = () => {
                   onBlur={formikProps.handleBlur("password")}
                   secureTextEntry={true}
                 />
-                <Text className={errorMessage} style={styles.errorText}>
+                <Text
+                  className={`text-error mt-1 mx-2 font-enRg ${I18nManager.isRTL ? 'text-right' : 'text-left'}`}
+                  style={styles.errorText}
+                >
                   {formikProps.touched.password && formikProps.errors.password}
                 </Text>
-                <Text className={generalError} style={styles.errorText}>
+                <Text
+                  className={`text-error mb-1 mx-2 font-enMd ${I18nManager.isRTL ? 'text-right' : 'text-left'}`}
+                  style={styles.errorText}
+                >
                   {formikProps.status?.error}
                 </Text>
                 <Button
@@ -122,14 +131,6 @@ const Login = () => {
     </KeyboardAwareScrollView>
   );
 };
-
-const container = "flex-1 bg-bgScreen items-center justify-center pb-36";
-const logoStyle = "w-48 h-48 mb-[-24px]";
-const welcome = `text-mainColor font-enMd`;
-const authTitle = `w-full text-center text-descColor font-enMd`;
-const authContent = "w-[92%] mt-12";
-const errorMessage = `text-error mt-1 mx-2 font-enRg ${I18nManager.isRTL ? 'text-right' : 'text-left'}`;
-const generalError = `text-error mb-1 mx-2 font-enMd ${I18nManager.isRTL ? 'text-right' : 'text-left'}`;
 
 const styles = StyleSheet.create({
   welcomeText: { fontSize: scaleFont(27) },

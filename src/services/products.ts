@@ -25,9 +25,14 @@ export interface ProductsResponse {
 const DEFAULT_LIMIT = 30;
 
 export const getProducts = async (pageParam = 0): Promise<ProductsResponse> => {
-  const skip = pageParam * DEFAULT_LIMIT;
-  const resp = await Axios.get<ProductsResponse>(`/products?limit=${DEFAULT_LIMIT}&skip=${skip}`);
-  return resp.data;
+  try {
+    const skip = pageParam * DEFAULT_LIMIT;
+    const resp = await Axios.get<ProductsResponse>(`/products?limit=${DEFAULT_LIMIT}&skip=${skip}`);
+    return resp.data;
+  } catch (error) {
+    console.log("getProducts ERROR ===>", error);
+    throw error;
+  }
 };
 
 export const deleteProduct = async (id: number): Promise<Product> => {
@@ -44,9 +49,14 @@ export const getCategoryProducts = async (
   category: string,
   pageParam = 0
 ): Promise<ProductsResponse> => {
-  const skip = pageParam * DEFAULT_LIMIT;
-  const resp = await Axios.get<ProductsResponse>(
-    `/products/category/${category}?limit=${DEFAULT_LIMIT}&skip=${skip}`
-  );
-  return resp.data;
+  try {
+    const skip = pageParam * DEFAULT_LIMIT;
+    const resp = await Axios.get<ProductsResponse>(
+      `/products/category/${category}?limit=${DEFAULT_LIMIT}&skip=${skip}`
+    );
+    return resp.data;
+  } catch (error) {
+    console.log("getCategoryProducts ERROR ===>", error);
+    throw error;
+  }
 };

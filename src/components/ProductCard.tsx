@@ -37,9 +37,12 @@ const ProductCard = ({ product, isAllTab }: productCardProps) => {
   if (product.isDeleted) return null;
 
   return (
-    <View className={container}>
+    <View className={`w-[48%] bg-bgContainer rounded-lg p-4 mb-4 items-center ${Platform.OS === 'ios' ? 'shadow-sm' : 'shadow-md'}`}>
       {isSuperAdmin && isAllTab && (
-        <TouchableOpacity className={trashContainer} onPress={onDeleteProduct}>
+        <TouchableOpacity
+          className={`absolute bg-bgScreen p-2 rounded-full ${I18nManager.isRTL ? 'self-start' : 'self-end'} mt-2 mx-3 z-10`}
+          onPress={onDeleteProduct}
+        >
           <Delete color={getThemeColor('error')} />
         </TouchableOpacity>
       )}
@@ -48,16 +51,14 @@ const ProductCard = ({ product, isAllTab }: productCardProps) => {
         className="w-36 h-36 mb-2"
         resizeMode="cover"
       />
-      <Text className={productText}>{product.title}</Text>
+      <Text className={"text-center text-mainColor font-enMd text-md leading-5"}>
+        {product.title}
+      </Text>
     </View>
   );
 };
 
 const MemoizedProductCard = memo(ProductCard);
-
-const container = `w-[48%] bg-bgContainer rounded-lg p-4 mb-4 items-center ${Platform.OS === 'ios' ? 'shadow-sm' : 'shadow-md'}`;
-const trashContainer = `absolute bg-bgScreen p-2 rounded-full ${I18nManager.isRTL ? 'self-start' : 'self-end'} mt-2 mx-3 z-10`;
-const productText = "text-center text-mainColor font-enMd text-md leading-5";
 
 MemoizedProductCard.displayName = 'ProductCard';
 

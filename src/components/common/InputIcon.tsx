@@ -41,11 +41,11 @@ const InputIcon = ({
   };
 
   return (
-    <View className={inputContainer}>
-      <View className={inputContent}>
+    <View className={`${I18nManager.isRTL ? 'flex-row-reverse' : 'flex-row'} items-center justify-between bg-bgContainer border border-borderColor ${I18nManager.isRTL ? 'pr-4 pl-12' : 'pl-4 pr-12'} py-3 mt-3 rounded-[12px]`}>
+      <View className={`${I18nManager.isRTL ? 'flex-row-reverse' : 'flex-row'} items-center gap-2`}>
         {escortSvg}
         <TextInput
-          className={inputText}
+          className={'flex-1 text-mainColor py-[6px] text-left font-enMd'}
           style={styles.inputText}
           placeholder={placeholder}
           placeholderTextColor={getThemeColor("placeholder")}
@@ -69,10 +69,6 @@ const InputIcon = ({
     </View>
   );
 };
-
-const inputContainer = `${I18nManager.isRTL ? 'flex-row-reverse' : 'flex-row'} items-center justify-between bg-bgContainer border border-borderColor ${I18nManager.isRTL ? 'pr-4 pl-12' : 'pl-4 pr-12'} py-3 mt-3 rounded-[12px]`;
-const inputContent = `${I18nManager.isRTL ? 'flex-row-reverse' : 'flex-row'} items-center gap-2`;
-const inputText = `flex-1 text-mainColor py-[6px] text-left font-enMd`;
 
 const styles = StyleSheet.create({
   inputText: { fontSize: scaleFont(14) },

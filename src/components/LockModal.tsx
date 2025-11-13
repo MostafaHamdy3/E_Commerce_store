@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Modal, Text, View } from "react-native";
 
 import * as LocalAuthentication from "expo-local-authentication";
+
 import { Button } from "./common/Button";
 
 type LockModalProps = {
@@ -41,10 +42,12 @@ const LockModal = ({ isVisible, unlockHandler }: LockModalProps) => {
       onRequestClose={() => {}}
       statusBarTranslucent
     >
-      <View className={container}>
-        <View className={content}>
-          <Text className={mainText}>App Locked</Text>
-          <Text className={passcodeText}>
+      <View className={"flex-1 items-center justify-center bg-bgScreen pb-16"}>
+        <View className={"w-[92%] self-center bg-bgContainer p-6 rounded-lg shadow-lg"}>
+          <Text className={"text-center text-mainColor font-enBold text-lg mb-4"}>
+            App Locked
+          </Text>
+          <Text className={"text-center text-secondaryColor mb-4"}>
             Use biometrics or device passcode to unlock.
           </Text>
           <Button
@@ -56,10 +59,5 @@ const LockModal = ({ isVisible, unlockHandler }: LockModalProps) => {
     </Modal>
   );
 };
-
-const container = "flex-1 items-center justify-center bg-bgScreen pb-16";
-const content = " w-[92%] self-center bg-bgContainer p-6 rounded-lg shadow-lg";
-const mainText = "text-center text-mainColor font-enBold text-lg mb-4";
-const passcodeText = "text-center text-secondaryColor mb-4";
 
 export default LockModal;

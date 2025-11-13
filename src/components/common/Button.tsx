@@ -25,7 +25,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <TouchableOpacity
-      className={baseButtonStyles}
+      className={'h-[52px] flex-row items-center justify-center bg-primaryColor rounded-[12px] gap-[12px] mt-4'}
       onPress={onPress}
       disabled={disabled || isLoading}
       activeOpacity={0.8}
@@ -34,16 +34,13 @@ export const Button = ({
       {isLoading ? (
         <ActivityIndicator size="small" color="#fff" />
       ) : (
-        <Text className={baseTextStyles} style={styles.btnText}>
+        <Text className={'text-white text-center font-enMd'} style={styles.btnText}>
           {btnText}
         </Text>
       )}
     </TouchableOpacity>
   );
 };
-
-const baseButtonStyles = `h-[52px] flex-row items-center justify-center bg-primaryColor rounded-[12px] gap-[12px] mt-4`;
-const baseTextStyles = `text-white text-center font-enMd`;
 
 const styles = StyleSheet.create({
   btnText: {
